@@ -1,8 +1,18 @@
+'''
+    -*- coding: utf-8 -*-
+    Time : 2023/5/15 16:30
+    Author : HenryHuang
+    File : demo_openai.py
+    Software: PyCharm
+'''
+__author__ = 'HenryHuang'
+
+
 import openai
 import streamlit as st
 from streamlit_chat import message
 
-openai.api_key = ''
+openai.api_key_path = "api.key"
 if 'prompts' not in st.session_state:
     st.session_state['prompts'] = [{"role": "system",
                                     "content": "You are a helpful assistant. Answer as concisely as possible."}]
@@ -43,7 +53,7 @@ def chat_click():
 
 
 st.image("moqizhai.png", width=300)
-st.title("My ChatBot")
+st.title("My ChatGpt API")
 
 user_input = st.text_input("You:", key="user")
 
