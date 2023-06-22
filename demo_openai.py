@@ -51,9 +51,9 @@ def chat_click():
         st.session_state['prompts'].append({"role": "assistant", "content": output})
         st.session_state['user'] = ""
 
-
+st.set_page_config(page_title="MoqiZhai", page_icon="moqizhai.png", layout="wide")
 st.image("moqizhai.png", width=300)
-st.title("My ChatGpt API")
+st.title("My Chat Bot")
 
 user_input = st.text_input("You:", key="user")
 
