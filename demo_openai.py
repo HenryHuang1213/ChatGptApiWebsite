@@ -25,7 +25,7 @@ if 'past' not in st.session_state:
 def generate_response(prompt):
     st.session_state['prompts'].append({"role": "user", "content": prompt})
     completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=st.session_state['prompts']
     )
 
@@ -51,7 +51,7 @@ def chat_click():
         st.session_state['prompts'].append({"role": "assistant", "content": output})
         st.session_state['user'] = ""
 
-st.set_page_config(page_title="MoqiZhai", page_icon="moqizhai.png", layout="wide")
+st.set_page_config(page_title="MoqiZhai", page_icon="moqizhai.png")
 st.image("moqizhai.png", width=300)
 st.title("My Chat Bot")
 
